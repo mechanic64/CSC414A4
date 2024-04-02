@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>Book Reviews</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+    <h1>Book Reviews</h1>
+
+    <!-- Add a div to input book data -->
+    <div id="addBook">
+        <h2>Add a Book</h2>
+        <input type="text" id="bookTitle" placeholder="Book Title">
+        <input type="text" id="publicationYear" placeholder="Publication Year">
+        <input type="text" id="authorName" placeholder="Author Name"> <!-- author input is now needed -->
+		<button onclick="addField()" >+</button>
+		
+        <!--<button onclick="addBook()">Add</button>-->
+    </div>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script>
+			$(document).ready(function() {
+				let fieldCount = 1;
+
+				// Add input field on button click
+				$('#addField').click(function() {
+					fieldCount++;
+					const newInputField = `<input type="text" id="authorName ${fieldCount}" placeholder="Author Name ${fieldCount}">`;
+					$('#addBook').append(newInputField);
+				});
+			});
+	</script>-->
+	<div>
+		<button onclick="addBook()">Add</button>
+	</div>
+    
+    <div id="searchBookByYear"> <!-- Search by year div-->
+        <h2>Search a Book</h2>
+        <input type="text" id="searchYear" placeholder="Publication Year"> <!-- text input-->
+        <button id="searchBooksButton" onclick="searchBook()">Search</button> <!-- function to call on click-->
+    </div>
+
+    <!-- Display books in this div -->
+    <div id="bookList">
+        <!-- Book data will be displayed here dynamically -->
+    </div>
+
+    <button id="showBooksButton" onclick="showAllBooks()">Show All Books</button>
+
+    <!-- Display books in this div -->
+    <div id="allbooks">
+        <!-- Book data will be displayed here dynamically -->
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
