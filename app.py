@@ -7,9 +7,9 @@ app = Flask(__name__)
 DATABASE = 'db/books.db'
 
 @app.route('/api/books', methods=['GET'])
-print("Python script running....")
 def get_all_books():
     try:
+        print("Get all Books....")
         conn = sqlite3.connect(DATABASE)
         cursor = conn.cursor()
         cursor.execute("SELECT b.book_id, b.title, b.publication_year, a.name FROM Books b LEFT JOIN book_author ba ON b.book_id = ba.book_id LEFT JOIN Authors a ON a.author_ID = ba.author_ID")
