@@ -7,6 +7,7 @@ app = Flask(__name__)
 DATABASE = 'db/books.db'
 
 @app.route('/api/books', methods=['GET'])
+print("Python script running....")
 def get_all_books():
     try:
         conn = sqlite3.connect(DATABASE)
