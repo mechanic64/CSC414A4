@@ -63,6 +63,7 @@ def get_all_reviews():
 @app.route('/api/add_book', methods=['POST'])
 def add_book():
     try:
+        print("Add a Book.....")
         conn = sqlite3.connect(DATABASE)
         cursor = conn.cursor()
 
